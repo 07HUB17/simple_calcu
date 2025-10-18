@@ -1,0 +1,88 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.calculator {
+    width: 300px;
+    max-width: 90vw;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+}
+
+/* F-06: 表示エリアのスタイル */
+.display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 15px;
+    text-align: right;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+}
+
+/* N-02: ボタン配置にCSS Gridを使用 */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+}
+
+/* ボタンの基本スタイル */
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 20px 0;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.1s;
+    height: 60px; /* タッチしやすい高さ */
+}
+
+/* 数字ボタンのスタイル */
+.number {
+    background-color: #555;
+    color: #fff;
+}
+.number:active { background-color: #777; }
+
+/* 演算子ボタンのスタイル */
+.operator {
+    background-color: #ff9500;
+    color: #fff;
+}
+.operator:active { background-color: #e08000; }
+
+/* クリアボタンのスタイル */
+.clear {
+    background-color: #ccc;
+    color: #333;
+}
+.clear:active { background-color: #bbb; }
+
+/* イコールボタンのスタイル */
+.equals {
+    background-color: #007aff;
+    color: #fff;
+}
+.equals:active { background-color: #0063cc; }
+
+/* 縦長・横長ボタンの調整 */
+.zero-btn {
+    grid-column: span 2;
+}
+.plus-btn {
+    grid-row: span 2;
+}
+.equals {
+    grid-row: span 2;
+}

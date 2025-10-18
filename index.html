@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シンプル計算機</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        
+        <div class="buttons">
+            <button class="btn clear" data-action="clear">C</button>
+            <button class="btn operator" data-action="divide">/</button>
+            <button class="btn operator" data-action="multiply">*</button>
+            <button class="btn operator" data-action="subtract">-</button>
+            
+            <button class="btn number">7</button>
+            <button class="btn number">8</button>
+            <button class="btn number">9</button>
+            
+            <button class="btn number">4</button>
+            <button class="btn number">5</button>
+            <button class="btn number">6</button>
+            <button class="btn operator plus-btn" data-action="add" style="grid-row: 2 / span 2;">+</button>
+
+            <button class="btn number">1</button>
+            <button class="btn number">2</button>
+            <button class="btn number">3</button>
+            
+            <button class="btn number zero-btn" style="grid-column: 1 / span 2;">0</button>
+            <button class="btn number" data-action="decimal">.</button>
+            <button class="btn equals" data-action="calculate" style="grid-row: 4 / span 2;">=</button>
+            
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+              .then(registration => {
+                console.log('SW registered: ', registration);
+              })
+              .catch(registrationError => {
+                console.log('SW registration failed: ', registrationError);
+              });
+          });
+        }
+    </script>
+</body>
+</html>
