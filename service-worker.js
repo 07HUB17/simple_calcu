@@ -1,14 +1,15 @@
 // service-worker.js
 const CACHE_NAME = 'calculator-v1';
 const urlsToCache = [
-  '/', // ルートパス（index.html）
-  'index.html',
-  'style.css',
-  'script.js',
-  'manifest.json',
+  //'/', // ルートパス（index.html）
+  './'
+  './index.html',
+  './style.css',
+  './script.js',
+  './manifest.json',
   // アイコンファイルが用意できたら追加してください
-  // 'icon-192.png', 
-  // 'icon-512.png'
+   './icon-192.png', 
+   './icon-512.png'
 ];
 
 // インストール: アプリのファイルをキャッシュする
@@ -55,4 +56,5 @@ self.addEventListener('fetch', (event) => {
         return fetch(event.request);
       })
   );
+
 });
